@@ -1,31 +1,10 @@
 @import './Vars.scss';
 
-.a{
-fill:#8e32e9;
-stroke:#8e32e9;
-stroke-linecap:round
-;stroke-linejoin:round;
-stroke-width:30px;
-}
-.b{
-fill:#fff;
-font-size:30px;
-font-family:Gilroy-ExtraBold, 
-Gilroy;font-weight:800;
-}
-.c{
-stroke:none;
-}
-.d{
-fill:none;
-}
-
-
 #nav-wrap ul, #nav-wrap li, #nav-wrap a {
-	 margin: 0;
-	 padding: 0;
-	 border: none;
-	 outline: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
 }
 
 /* nav-wrap */
