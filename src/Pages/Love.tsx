@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from '../Components/Navbar'
+import Header from "../Container/Header";
 
 function Love() {
     return(
         <div>
-            <Navbar active={"love"} />
+            <Header active={"demös"} />
         </div>
     );
 }
