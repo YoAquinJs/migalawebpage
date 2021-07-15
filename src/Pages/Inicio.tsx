@@ -4,7 +4,7 @@ import Header from "../Container/Header";
 function Inicio() {
     return(
         <div>
-            <Header active={"demös"} />
+            <Header active={"inicio"} />
         </div>
     );
 }

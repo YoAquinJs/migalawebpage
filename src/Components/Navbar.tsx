@@ -1,5 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import '../Style/Navbar.scss'
+import {FaInstagram, FaPatreon, FaTwitter} from "react-icons/all";
 
 function Navbar(props: any) {
     return(
@@ -13,32 +15,37 @@ function Navbar(props: any) {
 
             <ul id="nav" className="nav">
                 <li className={props.active == "inicio" ? "current" : undefined}>
-                    <a className="smoothScroll" href="#">
-                        INICIO
-                    </a>
+                    <Link to="/inicio">INICIO</Link>
                 </li>
 
                 <li className={props.active == "tao" ? "current" : undefined}>
-                    <a className="smoothScroll" href="#">
-                        TAO
-                    </a>
+                    <Link to="/tao">TAO</Link>
                 </li>
 
                 <li className={props.active == "demös" ? "current" : undefined}>
-                    <a className="smoothScroll" href="#">
-                        DEMOS
-                    </a>
+                    <Link to="/demös">DEMÖS</Link>
                 </li>
 
                 <li className={props.active == "partido" ? "current" : undefined}>
-                    <a className="smoothScroll" href="#">
-                        PARTIDO
-                    </a>
+                    <Link to="/partido">PARTIDO</Link>
                 </li>
 
                 <li className={props.active == "love" ? "current" : undefined}>
-                    <a className="smoothScroll" href="#">
-                        LOVE
+                    <Link to="/love">LOVE</Link>
+                </li>
+                <li>
+                    <a href="">
+                        <FaInstagram size="20px"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <FaTwitter size="20px"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <FaPatreon size="20px"/>
                     </a>
                 </li>
             </ul>

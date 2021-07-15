@@ -4,7 +4,7 @@ import Header from "../Container/Header";
 function Tao() {
     return(
         <div>
-            <Header active={"demös"} />
+            <Header active={"tao"} />
         </div>
     );
 }
