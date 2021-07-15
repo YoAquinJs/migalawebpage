@@ -13,31 +13,31 @@ function Navbar(props: any) {
 
             <ul id="nav" className="nav">
                 <li className={props.active == "inicio" ? "current" : undefined}>
-                    <a className="smoothscroll" href="#">
+                    <a className="smoothScroll" href="#">
                         INICIO
                     </a>
                 </li>
 
-                <li>
-                    <a className="smoothscroll" href="#">
+                <li className={props.active == "tao" ? "current" : undefined}>
+                    <a className="smoothScroll" href="#">
                         TAO
                     </a>
                 </li>
 
-                <li>
-                    <a className="smoothscroll" href="#">
+                <li className={props.active == "demös" ? "current" : undefined}>
+                    <a className="smoothScroll" href="#">
                         DEMOS
                     </a>
                 </li>
 
-                <li>
-                    <a className="smoothscroll" href="#">
+                <li className={props.active == "partido" ? "current" : undefined}>
+                    <a className="smoothScroll" href="#">
                         PARTIDO
                     </a>
                 </li>
 
-                <li>
-                    <a className="smoothscroll" href="#">
+                <li className={props.active == "love" ? "current" : undefined}>
+                    <a className="smoothScroll" href="#">
                         LOVE
                     </a>
                 </li>

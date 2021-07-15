@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from '../Components/Navbar'
 
-function Home() {
+function Inicio() {
     return(
         <div>
-            <Navbar active={"INICIO"} />
+            <Navbar active={"inicio"} />
         </div>
     );
 }
-export default Home;
+export default Inicio;

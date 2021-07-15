@@ -5,25 +5,31 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Home from "./Pages/Home";
+import Inicio from "./Pages/Inicio";
+import Tao from "./Pages/Tao";
+import Love from "./Pages/Love";
+import Partido from "./Pages/Partido";
+import Demos from "./Pages/Demös";
 
 function App() {
   return (
       <Router>
           <Switch>
               <Route path="/">
-                 <Home />
+                 <Inicio />
               </Route>
-              {/*
-                For each route you should add
-                `
-                <Route path="/">
-                 <Home />
+              <Route path="/demös">
+                  <Demos />
               </Route>
-              `
-              "/" This is home
-              "/Name" will be localhost:3000/Name
-              */}
+              <Route path="/love">
+                  <Love />
+              </Route>
+              <Route path="/partido">
+                  <Partido />
+              </Route>
+              <Route path="/tao">
+                  <Tao />
+              </Route>
           </Switch>
       </Router>
   );
