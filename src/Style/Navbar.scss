@@ -63,19 +63,27 @@ ul#nav li a {
 
   /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
 
+  font-weight: 900;
   display: inline-block;
-  padding: 8px 13px;
+  padding: 8px 20px;
   line-height: 32px;
   text-decoration: none;
   text-align: left;
   color: #fff;
+  border-bottom: 2px solid transparent;
 
   -webkit-transition: color .2s ease-in-out;
   -moz-transition: color .2s ease-in-out;
   -o-transition: color .2s ease-in-out;
   -ms-transition: color .2s ease-in-out;
-  transition: color .2s ease-in-out;
+  transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98),border-color .5s cubic-bezier(0.06, 0.81, 0, 0.98)
 }
 
+ul#nav li a:hover{
+  border-bottom: 2px solid $main-color;
+  transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98),border-color .5s cubic-bezier(0.06, 0.81, 0, 0.98)
+}
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #fe6928; }
+ul#nav li.current a { 
+  color: $purple-dark;
+}
