@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Style/Videos.scss'
 
 export default class Videos extends React.Component<{}, {videos: any, podcast: any}> {
     constructor(props: any) {
@@ -12,7 +13,7 @@ export default class Videos extends React.Component<{}, {videos: any, podcast: a
         this.loadData();
     }
     loadData() {
-        const key = "";
+        const key = "AIzaSyDYQXXzIHleQISVhAJW6DoqJHznC2EQS9g";
         const videosUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=PL7AepYvMrp3omUniQDXYaXwMcEanZtdzi&key=${key}`
         const podcastUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCcqcWFtrp3tpUlfqj0phH3A&maxResults=10&order=date&type=video&key=${key}`
         let podcast: any[] = [];
@@ -48,13 +49,23 @@ export default class Videos extends React.Component<{}, {videos: any, podcast: a
             return <h1>Error loading videos</h1>
         }
         return (
-            <div id="videos">
-                {
-                    this.state.videos.map((r:any) => <img src={r.snippet.thumbnails.default.url} />)
-                }
-                {
-                    this.state.podcast.map((r:any) => <img src={r.snippet.thumbnails.default.url} />)
-                }
+            <div id="videos-div">
+                <div id="videos">
+                    <h2 className="title">
+                        Ultimos <span>Videos</span>
+                    </h2>
+                    {
+                        this.state.videos.map((r:any) => <a href={`https://www.youtube.com/watch?v=${r.id.videoId}`} ><img src={r.snippet.thumbnails.default.url} /></a>)
+                    }
+                </div>
+                <div id="podcast">
+                    <h2 className="title">
+                        Ultimos <span>Podcasts</span>
+                    </h2>
+                    {
+                        this.state.podcast.map((r:any) => <img src={r.snippet.thumbnails.default.url} />)
+                    }
+                </div>
             </div>
         );
     }

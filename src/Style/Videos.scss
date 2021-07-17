@@ -1,0 +1,12 @@
+@import './Vars.scss';
+#videos-div{
+  margin: auto;
+  width: 50%;
+}
+#videos-div .title span{
+  color: #E332E9FF;
+}
+#videos-div img{
+  border-radius: 10px;
+  margin: 20px;
+}
