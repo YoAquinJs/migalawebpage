@@ -4,7 +4,7 @@ import Header from "../Container/Header";
 function Partido() {
     return(
         <div>
-            <Header active={"partido"} />
+            <h3>Partido</h3>
         </div>
     );
 }

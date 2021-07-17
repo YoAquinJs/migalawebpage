@@ -4,7 +4,7 @@ import Header from "../Container/Header";
 function Love() {
     return(
         <div>
-            <Header active={"love"} />
+            <h3>Love</h3>
         </div>
     );
 }

@@ -4,7 +4,6 @@ import Videos from '../Container/Videos'
 function Inicio() {
     return(
         <div>
-            <Header active={"inicio"} />
             <Videos />
         </div>
     );

@@ -4,7 +4,7 @@ import Header from "../Container/Header";
 function Demos() {
     return(
         <div>
-            <Header active={"demös"} />
+            <h3>Demos</h3>
         </div>
     );
 }

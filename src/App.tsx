@@ -10,6 +10,8 @@ import Tao from "./Pages/Tao";
 import Love from "./Pages/Love";
 import Partido from "./Pages/Partido";
 import Demos from "./Pages/Demös";
+import Header from './Container/Header';
+
 const routes:{ path: string, component: JSX.Element}[] = [
     { path: '/demös', component: <Demos />}, 
     { path: '/love', component: <Love />},
@@ -21,6 +23,7 @@ const routes:{ path: string, component: JSX.Element}[] = [
 export default function App() {
     return (
         <Router>
+            <Header />
             <Switch>
                 { routes.map((r) =>
                     <Route path={r.path}>
