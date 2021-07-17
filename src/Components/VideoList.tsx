@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Carousel from 'react-multi-carousel';
 import { YoutubeVideo } from 'youtube.ts';
 import '../Style/VideoList.scss'
 
@@ -14,6 +13,19 @@ export default function VideoList({ url, title }: { url: string, title: string }
     const [videos, updateVideos] = useState<Video[]>([]);
 
     useEffect(() => {
+        function getYoutubeVideos(): Promise<{ items: YoutubeVideo[] }> {
+            return fetch(url).then(response => response.json());
+        }
+
+        function mapYoutubeVideos({ id, snippet: { title, thumbnails, ...snippet } }: YoutubeVideo): Video {
+            const videoId = getVideoId(snippet, id);
+            return {
+                videoId,
+                title: title,
+                imageUrl: thumbnails.medium.url,
+            } as Video;
+        }
+
         getYoutubeVideos().then(({ items: youtubeVideos }) => {
             if (youtubeVideos) {
                 const videosFormatted = youtubeVideos.map(mapYoutubeVideos);
@@ -21,23 +33,10 @@ export default function VideoList({ url, title }: { url: string, title: string }
             }
         });
         return;
-    }, []);
+    }, [url]);
 
-    function getYoutubeVideos(): Promise<{ items: YoutubeVideo[] }> {
-        return fetch(url).then(response => response.json());
-    }
-
-    function mapYoutubeVideos({ snippet: { title, thumbnails, ...snippet } }: YoutubeVideo): Video {
-        const videoId = getVideoId(snippet);
-        return {
-            videoId,
-            title: title,
-            imageUrl: thumbnails.medium.url,
-        } as Video;
-    }
-
-    function getVideoId(snippet: any): string {
-        return snippet.resourceId ? snippet.resourceId.videoId : '';
+    function getVideoId(snippet: any, id: any): string {
+        return snippet.resourceId ? snippet.resourceId.videoId : id.videoId;
     }
 
     function getYoutubeLink(id: string): string {
@@ -50,8 +49,8 @@ export default function VideoList({ url, title }: { url: string, title: string }
             <div className="list">
                 {
                     videos.map((video, index) => (
-                        <div>
-                            <a key={index} target="_blank" rel="noreferrer" href={getYoutubeLink(video.videoId)}>
+                        <div key={index}>
+                            <a target="_blank" rel="noreferrer" href={getYoutubeLink(video.videoId)}>
                                 <img src={video.imageUrl} alt="" />
                             </a>
                         </div>
