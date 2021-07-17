@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Style/Navbar.scss'
-import Navbar from "../Components/Navbar";
 import { Route, Switch } from 'react-router-dom';
 import Demos from '../Pages/Demös';
 import Inicio from '../Pages/Inicio';

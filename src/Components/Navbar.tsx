@@ -51,33 +51,35 @@ function Navbar() {
     }
 
     return (
-        <nav id="nav-wrap">
+        <div className="navigation-container">
             {/* <a className="mobile-btn" href="nav-wrap" title="Show navigation">
                 Show navigation
             </a>
             <a className="mobile-btn" href="#home" title="Hide navigation">
                 Hide navigation
             </a> */}
+            <div className="logo-container">
 
-            <ul id="nav" className="nav">
+            </div>
+            <div className="links-container">
                 {
                     paths.map(({ path, name }) => (
-                        <li key={name} className={isRouteActive(path) ? 'current' : ''}>
+                        <div key={name} className={isRouteActive(path) ? 'current' : ''}>
                             <Link to={path}>{name.toUpperCase()}</Link>
-                        </li>
+                        </div>
                     ))
                 }
+            </div>
+            <div className="social-links-container">
                 {
                     socialNetworks.map(({ url, Icon }, index) => (
-                        <li key={index}>
-                            <a target="_blank" href={url}>
-                                <Icon size="20px" />
-                            </a>
-                        </li>
+                        <a key={index} target="_blank" href={url}>
+                            <Icon size="20px" />
+                        </a>
                     ))
                 }
-            </ul>
-        </nav>
+            </div>
+        </div>
     );
 }
 export default Navbar;
