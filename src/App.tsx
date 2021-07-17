@@ -2,36 +2,21 @@ import React from 'react';
 import './Style/App.scss';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
 } from "react-router-dom";
-import Inicio from "./Pages/Inicio";
-import Tao from "./Pages/Tao";
-import Love from "./Pages/Love";
-import Partido from "./Pages/Partido";
-import Demos from "./Pages/Demös";
 import Header from './Container/Header';
-
-const routes:{ path: string, component: JSX.Element}[] = [
-    { path: '/demös', component: <Demos />}, 
-    { path: '/love', component: <Love />},
-    { path: '/partido', component: <Partido />},
-    { path: '/tao', component: <Tao />},
-    { path: '/', component: <Inicio />},
-];
+import Body from './Container/Body';
 
 export default function App() {
     return (
         <Router>
-            <Header />
-            <Switch>
-                { routes.map((r) =>
-                    <Route path={r.path}>
-                        {r.component}
-                    </Route>
-                    )
-                }
-            </Switch>
+            <div className="app-container">
+                <div className="header-container">
+                    <Header />
+                </div>
+                <div className="body-container">
+                    <Body />
+                </div>
+            </div>
         </Router>
     );
 }
