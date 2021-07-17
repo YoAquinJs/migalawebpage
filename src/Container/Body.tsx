@@ -19,8 +19,8 @@ const routes:{ path: string, component: JSX.Element}[] = [
 function Body(props: any) {
     return (
         <Switch>
-            {routes.map((r) =>
-                <Route path={r.path}>
+            {routes.map((r, index) =>
+                <Route key={index} path={r.path}>
                     {r.component}
                 </Route>
             )

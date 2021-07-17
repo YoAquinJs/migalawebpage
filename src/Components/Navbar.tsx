@@ -73,7 +73,7 @@ function Navbar() {
             <div className="social-links-container">
                 {
                     socialNetworks.map(({ url, Icon }, index) => (
-                        <a key={index} target="_blank" href={url}>
+                        <a key={index} rel="noreferrer" target="_blank" href={url}>
                             <Icon size="20px" />
                         </a>
                     ))

@@ -13,4 +13,7 @@ body{
 .app-container {
     display: grid;
     grid-template-rows: 80px 1fr;
+    .body-container {
+        padding: 0 80px;
+    }
 }
