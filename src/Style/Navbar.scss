@@ -43,7 +43,7 @@ ul#nav li:nth-last-child(-n+3){
   background: #383838;
   border-radius: 50%;
   position: absolute;
-  margin-right: 10px;
+  //margin-right: 10px;
 }
 ul#nav li:nth-last-child(1){
   right: 0;
@@ -84,6 +84,6 @@ ul#nav li a:hover{
   transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98),border-color .5s cubic-bezier(0.06, 0.81, 0, 0.98)
 }
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { 
+ul#nav li.current a {
   color: $purple-dark;
 }

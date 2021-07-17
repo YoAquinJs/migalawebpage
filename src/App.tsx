@@ -10,29 +10,25 @@ import Tao from "./Pages/Tao";
 import Love from "./Pages/Love";
 import Partido from "./Pages/Partido";
 import Demos from "./Pages/Demös";
+const routes:{ path: string, component: JSX.Element}[] = [
+    { path: '/demös', component: <Demos />}, 
+    { path: '/love', component: <Love />},
+    { path: '/partido', component: <Partido />},
+    { path: '/tao', component: <Tao />},
+    { path: '/', component: <Inicio />},
+];
 
-function App() {
-  return (
-      <Router>
-          <Switch>
-              <Route path="/demös">
-                  <Demos />
-              </Route>
-              <Route path="/love">
-                  <Love />
-              </Route>
-              <Route path="/partido">
-                  <Partido />
-              </Route>
-              <Route path="/tao">
-                  <Tao />
-              </Route>
-              <Route path="/">
-                  <Inicio />
-              </Route>
-          </Switch>
-      </Router>
-  );
+export default function App() {
+    return (
+        <Router>
+            <Switch>
+                { routes.map((r) =>
+                    <Route path={r.path}>
+                        {r.component}
+                    </Route>
+                    )
+                }
+            </Switch>
+        </Router>
+    );
 }
-
-export default App;

@@ -15,7 +15,7 @@ function Navbar(props: any) {
 
             <ul id="nav" className="nav">
                 <li className={props.active == "inicio" ? "current" : undefined}>
-                    <Link to="/inicio">INICIO</Link>
+                    <Link to="/">INICIO</Link>
                 </li>
 
                 <li className={props.active == "tao" ? "current" : undefined}>
