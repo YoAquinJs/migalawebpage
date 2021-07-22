@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { YoutubeVideo } from 'youtube.ts';
 import '../Style/VideoList.scss'
+import VideoItem from './VideoItem';
 
 interface Video {
     videoId: string;
     title: string;
     imageUrl: string;
+    publishedAt: string;
 }
 
 export default function VideoList({ url, title }: { url: string, title: string }) {
@@ -23,6 +25,7 @@ export default function VideoList({ url, title }: { url: string, title: string }
                 videoId,
                 title: title,
                 imageUrl: thumbnails.medium.url,
+                publishedAt: snippet.publishedAt.substr(0, 10)
             } as Video;
         }
 
@@ -39,21 +42,13 @@ export default function VideoList({ url, title }: { url: string, title: string }
         return snippet.resourceId ? snippet.resourceId.videoId : id.videoId;
     }
 
-    function getYoutubeLink(id: string): string {
-        return `https://www.youtube.com/watch?v=${id}`;
-    }
-
     return (
         <div className="videos-list-container">
             <h2 className="title">Últimos <b>{title}</b></h2>
             <div className="list">
                 {
                     videos.map((video, index) => (
-                        <div key={index}>
-                            <a target="_blank" rel="noreferrer" href={getYoutubeLink(video.videoId)}>
-                                <img src={video.imageUrl} alt="" />
-                            </a>
-                        </div>
+                        <VideoItem key={index} {...video}></VideoItem>
                     ))
                 }
             </div>
