@@ -8,12 +8,8 @@
             color: $rose;
         }
     }
-    .list {
-        display: flex;
-        width: calc(100vw - 177px);
-        overflow: hidden;
-        overflow-x: auto;
-        
-    }
-    
+}
+
+.carousel-container {
+    max-width: calc(100vw - 190px);
 }
