@@ -1,22 +1,16 @@
-import React from 'react';
-import './Style/App.scss';
 import {
     BrowserRouter as Router,
+    Switch,
+    Route
 } from "react-router-dom";
-import Header from './Container/Header';
-import Body from './Container/Body';
+import Home from './Container/Home';
 
 export default function App() {
     return (
         <Router>
-            <div className="app-container">
-                <div className="header-container">
-                    <Header />
-                </div>
-                <div className="body-container">
-                    <Body />
-                </div>
-            </div>
+            <Switch>
+                <Route exact path="/" component={Home} />
+            </Switch>
         </Router>
     );
 }

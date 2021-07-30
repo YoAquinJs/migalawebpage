@@ -23,7 +23,7 @@
       transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98), border-color 0.5s cubic-bezier(0.06, 0.81, 0, 0.98);
 
       &:hover {
-        border-bottom: 2px solid $main-color;
+        border-bottom: 2px solid $pink-dark;
         transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98), border-color 0.5s cubic-bezier(0.06, 0.81, 0, 0.98);
       }
       &:active {

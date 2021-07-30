@@ -21,7 +21,7 @@ const responsive = {
         breakpoint: { max: 3000, min: 1620 },
         items: 6
     },
-    
+
     smallDesktop: {
         breakpoint: { max: 1620, min: 1024 },
         items: 4
@@ -72,11 +72,11 @@ export default function VideoList({ url, title }: { url: string, title: string }
         <div className="videos-list-container">
             <h2 className="title">Últimos <b>{title}</b></h2>
             <Carousel containerClass="carousel-container" responsive={responsive}>
-                    {
-                        videos.map((video, index) => (
-                            <VideoItem key={index} {...video}></VideoItem>
-                        ))
-                    }
+                {
+                    videos.map((video, index) => (
+                        <VideoItem key={index} {...video}></VideoItem>
+                    ))
+                }
             </Carousel>
         </div>
     )
