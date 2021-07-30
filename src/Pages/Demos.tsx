@@ -1,10 +1,10 @@
 import Header from '../Container/Header';
 
-const Partido = () => (
+const Demos = () => (
     <>
         <Header />
-        <h1>PARTIDO</h1>
+        <h1>DEMOS</h1>
     </>
 )
 
-export default Partido;
+export default Demos;

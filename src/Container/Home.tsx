@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import Body from './Body';
+import Videos from '../Container/Videos'
 import '../Style/App.scss';
 
 const Home = () => (
@@ -9,7 +9,7 @@ const Home = () => (
             <Header />
         </div>
         <div className="body-container">
-            <Body />
+            <Videos />
         </div>
     </div>
 )

@@ -1,10 +1,10 @@
-import React from 'react';
+import Header from '../Container/Header';
 
-function Tao() {
-    return(
-        <div>
-            <h1>Tao</h1>
-        </div>
-    );
-}
+const Tao = () => (
+    <>
+        <Header />
+        <h1>TAO</h1>
+    </>
+)
+
 export default Tao;

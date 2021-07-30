@@ -15,7 +15,7 @@ const paths: { name: string, path: string }[] = [
     },
     {
         name: 'demös',
-        path: '/demös',
+        path: '/demos',
     },
     {
         name: 'partido',
@@ -52,12 +52,6 @@ function Navbar() {
 
     return (
         <div className="navigation-container">
-            {/* <a className="mobile-btn" href="nav-wrap" title="Show navigation">
-                Show navigation
-            </a>
-            <a className="mobile-btn" href="#home" title="Hide navigation">
-                Hide navigation
-            </a> */}
             <div className="logo-container">
 
             </div>
