@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from "react-router-dom";
 import '../Style/Navbar.scss'
+import logo from '../Assets/Logo.png'
 import { FaInstagram, FaPatreon, FaTwitter } from "react-icons/all";
 import { IconType } from 'react-icons';
 
@@ -53,7 +54,7 @@ function Navbar() {
     return (
         <div className="navigation-container">
             <div className="logo-container">
-
+                <Link to='/'><img className="logo-migala" src={logo} alt='Migala Logo' /></Link>
             </div>
             <div className="links-container">
                 {
